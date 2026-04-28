@@ -148,12 +148,6 @@ export default function App() {
           <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-8 md:gap-16 items-center z-10">
             
             <div className="flex flex-col items-start relative z-20">
-              <FadeIn delay={100}>
-                <div className="inline-flex items-center gap-3 px-3 py-1.5 border border-cyan-500/30 bg-cyan-950/30 text-cyan-400 text-xs font-mono mb-6 backdrop-blur-sm shadow-[0_0_15px_rgba(6,182,212,0.2)]">
-                  <Activity size={14} className="animate-pulse" />
-                  <span>NEXUS BEREIT ZUR FERTIGUNG</span>
-                </div>
-              </FadeIn>
               
               <FadeIn delay={200}>
                 <h1 className="text-5xl md:text-8xl font-black text-white leading-[1.0] tracking-tighter mb-4 md:mb-6 uppercase">
