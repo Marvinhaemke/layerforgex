@@ -308,9 +308,9 @@ export default function App() {
             <div className="relative pl-8 md:pl-12 space-y-16 before:absolute before:inset-0 before:ml-8 md:before:ml-12 before:-translate-x-px md:before:-translate-x-px before:h-full before:w-[2px] before:bg-gradient-to-b before:from-cyan-500 before:via-fuchsia-500 before:to-cyan-900">
               
               {[
-                { step: "01", title: "Datei-Upload", desc: "Senden Sie uns Ihre 3D-Modelle. Wir prüfen die Daten sofort auf Machbarkeit und Druckbarkeit." },
-                { step: "02", title: "Fertigung", desc: "Ihr Bauteil wird Schicht für Schicht mit höchster Präzision und modernster Technik gefertigt." },
-                { step: "03", title: "Versand", desc: "Nach einer sorgfältigen Qualitätskontrolle wird das fertige Teil sicher verpackt und an Sie versendet." }
+                { step: "01", title: "Anfrage senden", desc: "Schick uns deine Idee, Skizze, Maße oder Datei." },
+                { step: "02", title: "Prüfung & Angebot", desc: "Wir prüfen Machbarkeit, Material und Aufwand." },
+                { step: "03", title: "Produktion & Versand", desc: "Nach Freigabe fertigen wir dein Teil." }
               ].map((proc, idx) => (
                 <FadeIn key={idx} delay={idx * 200} className="relative">
                   <div className="absolute -left-[35px] md:-left-[51px] top-1 w-6 h-6 rounded-full bg-black border-[3px] border-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.8)] z-10 flex items-center justify-center">
@@ -361,35 +361,36 @@ export default function App() {
                   <form className="space-y-6 relative z-10" onSubmit={e => e.preventDefault()}>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="group">
-                        <label className="block text-xs font-mono text-cyan-600 mb-2 pl-1 group-focus-within:text-cyan-400 transition-colors">&gt; IHR NAME</label>
+                        <label className="block text-xs font-mono text-cyan-600 mb-2 pl-1 group-focus-within:text-cyan-400 transition-colors">&gt; NAME*</label>
                         <input 
                           type="text" 
+                          required
                           className="w-full bg-black/50 border-b-2 border-slate-800 px-4 py-3 text-white text-lg focus:outline-none focus:border-cyan-500 transition-colors rounded-none font-mono"
                           placeholder="..."
                         />
                       </div>
                       <div className="group">
-                        <label className="block text-xs font-mono text-cyan-600 mb-2 pl-1 group-focus-within:text-cyan-400 transition-colors">&gt; IHRE E-MAIL</label>
+                        <label className="block text-xs font-mono text-cyan-600 mb-2 pl-1 group-focus-within:text-cyan-400 transition-colors">&gt; E-MAILADRESSE*</label>
                         <input 
                           type="email" 
+                          required
                           className="w-full bg-black/50 border-b-2 border-slate-800 px-4 py-3 text-white text-lg focus:outline-none focus:border-cyan-500 transition-colors rounded-none font-mono"
                           placeholder="..."
                         />
                       </div>
                     </div>
                     <div className="group">
-                      <label className="block text-xs font-mono text-cyan-600 mb-2 pl-1 group-focus-within:text-cyan-400 transition-colors">&gt; GEWÜNSCHTES MATERIAL (OPTIONAL)</label>
-                      <select className="w-full bg-black/50 border-b-2 border-slate-800 px-4 py-3 text-white text-lg focus:outline-none focus:border-cyan-500 transition-colors rounded-none font-mono appearance-none">
-                        <option className="bg-black">Analysieren & Beraten</option>
-                        <option className="bg-black">PLA (Standard Prototyp)</option>
-                        <option className="bg-black">PETG (Mechanische Belastung)</option>
-                        <option className="bg-black">ABS / ASA (Thermische Resistenz)</option>
-                      </select>
+                      <label className="block text-xs font-mono text-cyan-600 mb-2 pl-1 group-focus-within:text-cyan-400 transition-colors">&gt; NACHRICHT</label>
+                      <textarea 
+                        rows="4"
+                        className="w-full bg-black/50 border-b-2 border-slate-800 px-4 py-3 text-white text-lg focus:outline-none focus:border-cyan-500 transition-colors rounded-none font-mono resize-none"
+                        placeholder="..."
+                      ></textarea>
                     </div>
                     
                     <button className="w-full mt-8 relative group overflow-hidden bg-transparent border border-cyan-500 text-cyan-400 font-black text-lg py-5 transition-all flex justify-center items-center gap-2 hover:text-black">
                       <div className="absolute inset-0 bg-cyan-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
-                      <span className="relative z-10 font-mono tracking-widest uppercase">Anfrage absenden</span> 
+                      <span className="relative z-10 font-mono tracking-widest uppercase">Senden</span> 
                       <ChevronRight size={20} className="relative z-10" />
                     </button>
                   </form>
