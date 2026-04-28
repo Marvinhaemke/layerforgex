@@ -155,7 +155,7 @@ export default function App() {
               </FadeIn>
               
               <FadeIn delay={200}>
-                <h1 className="text-5xl md:text-8xl font-black text-white leading-[1.0] tracking-tighter mb-4 md:mb-6 uppercase">
+                <h1 className="text-5xl md:text-8xl font-black text-white leading-[1.0] tracking-tight md:tracking-tighter mb-4 md:mb-6 uppercase break-words w-full">
                   Zukunft<br/>
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-fuchsia-500">
                     Drucken.
@@ -220,8 +220,8 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <FadeIn>
               <div className="flex items-center gap-4 mb-12">
-                <div className="w-12 h-px bg-cyan-500/50"></div>
-                <h2 className="text-2xl md:text-4xl font-black text-white uppercase tracking-widest">Ihre <span className="text-cyan-400">Vorteile</span></h2>
+                <div className="w-12 h-px bg-cyan-500/50 shrink-0"></div>
+                <h2 className="text-2xl md:text-4xl font-black text-white uppercase tracking-wider md:tracking-widest break-words">Ihre <span className="text-cyan-400">Vorteile</span></h2>
               </div>
             </FadeIn>
             <div className="grid md:grid-cols-3 gap-6">
@@ -254,13 +254,13 @@ export default function App() {
         <section id="services" className="py-24 relative z-10 bg-gradient-to-b from-black via-[#010a12] to-black">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <FadeIn>
-              <div className="flex justify-between items-end mb-16 border-b border-white/10 pb-6">
-                <div>
-                  <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter">
+              <div className="flex justify-between items-end mb-16 border-b border-white/10 pb-6 gap-4">
+                <div className="min-w-0">
+                  <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight md:tracking-tighter break-words">
                     Unsere<br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-500">Leistungen</span>
                   </h2>
                 </div>
-                <div className="hidden md:flex font-mono text-cyan-500 text-sm animate-pulse">STATUS: BEREIT</div>
+                <div className="hidden md:flex font-mono text-cyan-500 text-sm animate-pulse shrink-0">STATUS: BEREIT</div>
               </div>
             </FadeIn>
 
@@ -302,7 +302,7 @@ export default function App() {
 
           <div className="px-6 md:px-12 max-w-4xl mx-auto">
             <FadeIn>
-              <h2 className="text-3xl md:text-4xl font-black text-white mb-16 uppercase tracking-widest text-center">Der <span className="text-fuchsia-500">Ablauf</span></h2>
+              <h2 className="text-3xl md:text-4xl font-black text-white mb-16 uppercase tracking-wider md:tracking-widest text-center break-words">Der <span className="text-fuchsia-500">Ablauf</span></h2>
             </FadeIn>
 
             <div className="relative pl-8 md:pl-12 space-y-16 before:absolute before:inset-0 before:ml-8 md:before:ml-12 before:-translate-x-px md:before:-translate-x-px before:h-full before:w-[2px] before:bg-gradient-to-b before:from-cyan-500 before:via-fuchsia-500 before:to-cyan-900">
