@@ -128,11 +128,10 @@ export default function App() {
         <div className="flex items-center gap-8 text-sm font-bold uppercase tracking-widest">
           <button onClick={() => scrollTo('services')} className={`relative transition duration-300 ${activeTab === 'services' ? 'text-cyan-400 drop-shadow-[0_0_8px_rgba(6,182,212,0.8)]' : 'text-slate-500 hover:text-cyan-300'}`}>Leistungen</button>
           <button onClick={() => scrollTo('benefits')} className={`relative transition duration-300 ${activeTab === 'benefits' ? 'text-cyan-400 drop-shadow-[0_0_8px_rgba(6,182,212,0.8)]' : 'text-slate-500 hover:text-cyan-300'}`}>Vorteile</button>
-          <button onClick={() => scrollTo('process')} className={`relative transition duration-300 ${activeTab === 'process' ? 'text-cyan-400 drop-shadow-[0_0_8px_rgba(6,182,212,0.8)]' : 'text-slate-500 hover:text-cyan-300'}`}>System</button>
-          <button onClick={() => scrollTo('target')} className={`relative transition duration-300 ${activeTab === 'target' ? 'text-cyan-400 drop-shadow-[0_0_8px_rgba(6,182,212,0.8)]' : 'text-slate-500 hover:text-cyan-300'}`}>Module</button>
+          <button onClick={() => scrollTo('process')} className={`relative transition duration-300 ${activeTab === 'process' ? 'text-cyan-400 drop-shadow-[0_0_8px_rgba(6,182,212,0.8)]' : 'text-slate-500 hover:text-cyan-300'}`}>Ablauf</button>
           <button onClick={() => scrollTo('contact')} className="group relative px-6 py-2.5 bg-cyan-950/30 border border-cyan-500/50 text-cyan-400 hover:text-white overflow-hidden transition-all">
             <div className="absolute inset-0 bg-cyan-500/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
-            <span className="relative z-10 flex items-center gap-2">Initiieren <Terminal size={14}/></span>
+            <span className="relative z-10 flex items-center gap-2">Anfragen <Mail size={14}/></span>
           </button>
         </div>
       </nav>
@@ -148,6 +147,12 @@ export default function App() {
           <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-8 md:gap-16 items-center z-10">
             
             <div className="flex flex-col items-start relative z-20">
+              <FadeIn delay={100}>
+                <div className="inline-flex items-center gap-3 px-3 py-1.5 border border-cyan-500/30 bg-cyan-950/30 text-cyan-400 text-xs font-mono mb-6 backdrop-blur-sm shadow-[0_0_15px_rgba(6,182,212,0.2)]">
+                  <Activity size={14} className="animate-pulse" />
+                  <span>BEREIT ZUR FERTIGUNG</span>
+                </div>
+              </FadeIn>
               
               <FadeIn delay={200}>
                 <h1 className="text-5xl md:text-8xl font-black text-white leading-[1.0] tracking-tighter mb-4 md:mb-6 uppercase">
@@ -160,14 +165,14 @@ export default function App() {
               
               <FadeIn delay={300}>
                 <p className="text-lg md:text-xl text-slate-400 mb-8 max-w-md leading-relaxed font-light border-l-2 border-cyan-500/50 pl-4">
-                  Hyperpräziser 3D-Druck für Prototypen & Serien. Konvertieren Sie digitale Vektoren in physische Realität – innerhalb von 48 Stunden.
+                  Präziser 3D-Druck für Prototypen und Serien. Konvertieren Sie digitale Modelle in physische Realität in nur wenigen Tagen.
                 </p>
               </FadeIn>
 
               <FadeIn delay={400} className="w-full sm:w-auto">
                 <button onClick={() => scrollTo('contact')} className="w-full sm:w-auto group relative flex items-center justify-center gap-4 px-8 py-5 bg-cyan-500 text-black font-black text-lg uppercase tracking-widest overflow-hidden transition-all shadow-[0_0_30px_rgba(6,182,212,0.4)] hover:shadow-[0_0_50px_rgba(6,182,212,0.6)] hover:scale-[1.02]">
                   <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
-                  <span className="relative z-10">Transmission starten</span>
+                  <span className="relative z-10">Projekt starten</span>
                   <Crosshair size={20} className="relative z-10 group-hover:rotate-90 transition-transform duration-500" />
                 </button>
               </FadeIn>
@@ -216,14 +221,14 @@ export default function App() {
             <FadeIn>
               <div className="flex items-center gap-4 mb-12">
                 <div className="w-12 h-px bg-cyan-500/50"></div>
-                <h2 className="text-2xl md:text-4xl font-black text-white uppercase tracking-widest">System<span className="text-cyan-400">Vorteile</span></h2>
+                <h2 className="text-2xl md:text-4xl font-black text-white uppercase tracking-widest">Ihre <span className="text-cyan-400">Vorteile</span></h2>
               </div>
             </FadeIn>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { icon: <Zap/>, title: "Lichtgeschwindigkeit", desc: "Produktionszyklus in unter 48h. Iterieren Sie schneller als der Wettbewerb.", color: "cyan" },
-                { icon: <Crosshair/>, title: "Mikro-Präzision", desc: "Toleranzen auf molekularer Ebene. Perfekte Passform für komplexe Mechaniken.", color: "fuchsia" },
-                { icon: <Orbit/>, title: "Absolute Skalierung", desc: "Vom Prototyping bis zur Massenproduktion. Keine Werkzeugkosten.", color: "blue" }
+                { icon: <Zap/>, title: "Schnelle Lieferung", desc: "Realisieren Sie Ihre Projekte in Rekordzeit. So können Sie schneller testen und produzieren.", color: "cyan" },
+                { icon: <Crosshair/>, title: "Hohe Präzision", desc: "Detailgetreuer Druck mit geringen Toleranzen. Maßgeschneiderte Passform für komplexe Bauteile.", color: "fuchsia" },
+                { icon: <Orbit/>, title: "Einfache Skalierung", desc: "Vom ersten Prototyp bis zur Serienproduktion. Flexibel und ohne teure Werkzeugkosten.", color: "blue" }
               ].map((item, idx) => (
                 <FadeIn key={idx} delay={idx * 150}>
                   <div className="relative p-8 h-full bg-[#03050a]/80 backdrop-blur-xl border border-white/5 overflow-hidden group hover:border-cyan-500/50 transition-all duration-500">
@@ -252,10 +257,10 @@ export default function App() {
               <div className="flex justify-between items-end mb-16 border-b border-white/10 pb-6">
                 <div>
                   <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter">
-                    Fertigungs<br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-500">Module</span>
+                    Unsere<br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-500">Leistungen</span>
                   </h2>
                 </div>
-                <div className="hidden md:flex font-mono text-cyan-500 text-sm animate-pulse">STATUS: ONLINE</div>
+                <div className="hidden md:flex font-mono text-cyan-500 text-sm animate-pulse">STATUS: BEREIT</div>
               </div>
             </FadeIn>
 
@@ -297,15 +302,15 @@ export default function App() {
 
           <div className="px-6 md:px-12 max-w-4xl mx-auto">
             <FadeIn>
-              <h2 className="text-3xl md:text-4xl font-black text-white mb-16 uppercase tracking-widest text-center">Initialisierungs<span className="text-fuchsia-500">Prozess</span></h2>
+              <h2 className="text-3xl md:text-4xl font-black text-white mb-16 uppercase tracking-widest text-center">Der <span className="text-fuchsia-500">Ablauf</span></h2>
             </FadeIn>
 
             <div className="relative pl-8 md:pl-12 space-y-16 before:absolute before:inset-0 before:ml-8 md:before:ml-12 before:-translate-x-px md:before:-translate-x-px before:h-full before:w-[2px] before:bg-gradient-to-b before:from-cyan-500 before:via-fuchsia-500 before:to-cyan-900">
               
               {[
-                { step: "01", title: "Daten-Uplink", desc: "Übermitteln Sie Ihre .STL/.STEP Vektoren. Unsere KI analysiert sofort die strukturelle Integrität." },
-                { step: "02", title: "Synthese", desc: "Das physische Objekt wird auf atomarer Schichtebene (bis 0.05mm) konstruiert." },
-                { step: "03", title: "Extraktion", desc: "Post-Processing, Qualitäts-Scan und gesicherter Transport an Ihre Koordinaten." }
+                { step: "01", title: "Datei-Upload", desc: "Senden Sie uns Ihre 3D-Modelle. Wir prüfen die Daten sofort auf Machbarkeit und Druckbarkeit." },
+                { step: "02", title: "Fertigung", desc: "Ihr Bauteil wird Schicht für Schicht mit höchster Präzision und modernster Technik gefertigt." },
+                { step: "03", title: "Versand", desc: "Nach einer sorgfältigen Qualitätskontrolle wird das fertige Teil sicher verpackt und an Sie versendet." }
               ].map((proc, idx) => (
                 <FadeIn key={idx} delay={idx * 200} className="relative">
                   <div className="absolute -left-[35px] md:-left-[51px] top-1 w-6 h-6 rounded-full bg-black border-[3px] border-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.8)] z-10 flex items-center justify-center">
@@ -314,7 +319,7 @@ export default function App() {
                   
                   <div className="bg-[#03050a] border border-white/5 p-6 md:p-8 rounded-r-2xl rounded-bl-2xl relative overflow-hidden group">
                     <div className="absolute top-0 right-0 bg-white/5 px-3 py-1 font-mono text-cyan-500 text-xs rounded-bl-lg border-b border-l border-white/10">
-                      PHASE {proc.step}
+                      SCHRITT {proc.step}
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-3 tracking-wide">{proc.title}</h3>
                     <p className="text-slate-400 text-sm leading-relaxed font-light">{proc.desc}</p>
@@ -339,24 +344,24 @@ export default function App() {
                     <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                     <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
                   </div>
-                  <div className="font-mono text-xs text-cyan-600">LAYERFORGEX // COMMAND_PROMPT</div>
+                  <div className="font-mono text-xs text-cyan-600">LAYERFORGEX // KONTAKTFORMULAR</div>
                 </div>
 
                 <div className="p-6 md:p-12 relative overflow-hidden">
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay pointer-events-none"></div>
                   
                   <h2 className="text-3xl font-black text-white mb-2 uppercase tracking-widest flex items-center gap-3">
-                    <Terminal className="text-cyan-500"/> Transmission
+                    <Mail className="text-cyan-500"/> Projekt anfragen
                   </h2>
                   <p className="text-cyan-500/70 text-sm mb-10 font-mono flex items-center gap-2">
                     <span className="w-2 h-4 bg-cyan-500 animate-pulse"></span>
-                    Warte auf Benutzereingabe...
+                    Bitte füllen Sie die Details aus...
                   </p>
 
                   <form className="space-y-6 relative z-10" onSubmit={e => e.preventDefault()}>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="group">
-                        <label className="block text-xs font-mono text-cyan-600 mb-2 pl-1 group-focus-within:text-cyan-400 transition-colors">&gt; IDENTIFIKATION (NAME)</label>
+                        <label className="block text-xs font-mono text-cyan-600 mb-2 pl-1 group-focus-within:text-cyan-400 transition-colors">&gt; IHR NAME</label>
                         <input 
                           type="text" 
                           className="w-full bg-black/50 border-b-2 border-slate-800 px-4 py-3 text-white text-lg focus:outline-none focus:border-cyan-500 transition-colors rounded-none font-mono"
@@ -364,7 +369,7 @@ export default function App() {
                         />
                       </div>
                       <div className="group">
-                        <label className="block text-xs font-mono text-cyan-600 mb-2 pl-1 group-focus-within:text-cyan-400 transition-colors">&gt; KOMMUNIKATION (E-MAIL)</label>
+                        <label className="block text-xs font-mono text-cyan-600 mb-2 pl-1 group-focus-within:text-cyan-400 transition-colors">&gt; IHRE E-MAIL</label>
                         <input 
                           type="email" 
                           className="w-full bg-black/50 border-b-2 border-slate-800 px-4 py-3 text-white text-lg focus:outline-none focus:border-cyan-500 transition-colors rounded-none font-mono"
@@ -373,7 +378,7 @@ export default function App() {
                       </div>
                     </div>
                     <div className="group">
-                      <label className="block text-xs font-mono text-cyan-600 mb-2 pl-1 group-focus-within:text-cyan-400 transition-colors">&gt; MATERIAL_MATRIX (OPTIONAL)</label>
+                      <label className="block text-xs font-mono text-cyan-600 mb-2 pl-1 group-focus-within:text-cyan-400 transition-colors">&gt; GEWÜNSCHTES MATERIAL (OPTIONAL)</label>
                       <select className="w-full bg-black/50 border-b-2 border-slate-800 px-4 py-3 text-white text-lg focus:outline-none focus:border-cyan-500 transition-colors rounded-none font-mono appearance-none">
                         <option className="bg-black">Analysieren & Beraten</option>
                         <option className="bg-black">PLA (Standard Prototyp)</option>
@@ -384,7 +389,7 @@ export default function App() {
                     
                     <button className="w-full mt-8 relative group overflow-hidden bg-transparent border border-cyan-500 text-cyan-400 font-black text-lg py-5 transition-all flex justify-center items-center gap-2 hover:text-black">
                       <div className="absolute inset-0 bg-cyan-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
-                      <span className="relative z-10 font-mono tracking-widest uppercase">Daten Übertragen</span> 
+                      <span className="relative z-10 font-mono tracking-widest uppercase">Anfrage absenden</span> 
                       <ChevronRight size={20} className="relative z-10" />
                     </button>
                   </form>
@@ -423,9 +428,9 @@ export default function App() {
 
           {[
             { id: 'home', icon: <Home size={20}/>, label: 'Start' },
-            { id: 'services', icon: <Box size={20}/>, label: 'Module' },
-            { id: 'process', icon: <GitMerge size={20}/>, label: 'System' },
-            { id: 'contact', icon: <Terminal size={20}/>, label: 'Link' }
+            { id: 'services', icon: <Box size={20}/>, label: 'Leistungen' },
+            { id: 'process', icon: <GitMerge size={20}/>, label: 'Ablauf' },
+            { id: 'contact', icon: <Mail size={20}/>, label: 'Kontakt' }
           ].map((item) => (
              <button 
               key={item.id}
