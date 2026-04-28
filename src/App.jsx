@@ -158,7 +158,7 @@ export default function App() {
               <FadeIn delay={200}>
                 <h1 className="text-5xl md:text-8xl font-black text-white leading-[1.0] tracking-tighter mb-4 md:mb-6 uppercase">
                   Zukunft<br/>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-fuchsia-500 drop-shadow-[0_0_20px_rgba(6,182,212,0.3)]">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-fuchsia-500">
                     Drucken.
                   </span>
                 </h1>
